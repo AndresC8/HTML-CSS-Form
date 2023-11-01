@@ -4,18 +4,16 @@ $usuario = 'root';
 $clave = '';
 $baseDeDatos = 'formulario';
 
-<<<<<<< HEAD
 $enlace = mysqli_connect(
     $servidor, 
     $usuario, 
     $clave, 
     $baseDeDatos);
-=======
+
 $enlace = mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
->>>>>>> 010b9d04692029c7744ba5b6e2f8c15c6dcba8a2
 
 if (!$enlace) {
-    die("eerror al conectar a la base de datos: " . mysqli_connect_error());
+    die("Error al conectar a la base de datos: " . mysqli_connect_error());
 }
 
 if (isset($_POST['registro'])) {
@@ -67,11 +65,9 @@ mysqli_close($enlace);
                     <p>¿boton raro? <a href="a">####</a></p>
                 </div>
                 <div class="btn-field">
-<<<<<<< HEAD
                     <button id="registro" type="submit" name="registro">Registrarse</button>
-=======
                     <button id="registro" type="submit" name="registro">mmm</button>
->>>>>>> 010b9d04692029c7744ba5b6e2f8c15c6dcba8a2
+
                 </div>
             </form>
         </div>
