@@ -11,15 +11,23 @@ class Conexion:
         self.cursor = self.conexion.cursor()
         cursor = self.cursor
 
-    def mostrarDatos(self):
+    def mostrarRegistros(self):
         query = 'SELECT * FROM datos'
         self.cursor.execute(query)
         registros = self.cursor.fetchall()
-        for fila in registros:
-            print(fila)
+        for i in registros:
+            print(i)
 
-    
+    def eliminarRegistro(self, ID):
+        query = 'DELETE FROM datos WHERE ID = %s'
+        self.cursor.execute(query, (ID,))
+        self.conexion.commit()
+
+
+ID = int(input('ID del registro a eliminar: '))
+
 conexion = Conexion()
-conexion.mostrarDatos()
+conexion.eliminarRegistro(ID)
+conexion.mostrarRegistros()
 
 conexion.cursor.close()
